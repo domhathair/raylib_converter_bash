@@ -1,32 +1,24 @@
-## snake_case converter for raylib.h
+## snake_case converter for raylib.h / raymath.h
 
-- version 1.0, Jan 5 2024
-- version 1.1, May 4 2024(!)
+[MIT license](https://github.com/domhathair/raylib-converter-bash/blob/master/LICENSE) - [@keyle](https://github.com/keyle/raylib-converter), [@domhathair](https://github.com/domhathair/raylib-converter-bash)
 
-(MIT license) - @keyle
+This is a converter from raylib's traditional _PascalCase/camelCase_ to lowercase _snake_case_.
 
-This is a converter from raylib's traditional CamelCase to lowercase snake_case.
-
-In C, I prefer the old traditional naming style, it fits better with other libraries, as well as mine(s)
-also I found it weird to have uint16_t etc. mixed with Vector2 etc. I don't like the mish-mash.
-
-NOTE: this converter is NOT part of the raylib library (https://www.raylib.com/) and is provided "as-is".
+**_NOTE_**: this converter is **NOT** part of the raylib library (https://www.raylib.com/) and is provided **"as-is"**.
 
 ### Process:
 
-- parses raylib.h in the current folder
-- creates macros for all "_FunctionName_" to "**_r_function_name_**"
-- creates macros for all "_TypeName_" to "**_type_name_t_**"
-- saves the content into _raylib_s.h_
-- does the same for raymath.h
+- Creates macros for all "_FunctionName_" to "**_r\*\_function_name_**";
+- Creates macros for all "_TypeName_" to "**_type_name_t_**";
+- Saves the content into _"raylib_s.h"_ and _"raymath_s.h"_.
 
-This approach is non-destructive, so you can copy-paste a raylib examples, they will work
-then eventually rewrite it to snake_case and it will work just the same
-there is also no cost added at runtime
+This approach is non-destructive, so you can copy-paste a raylib examples, they will work then eventually rewrite it to snake_case and it will work just the same.  
+There is also no cost added at runtime.
 
 ### Usage: 
 
-- put this script in the same folder as "raylib.h" 
-- python converter.py (Note: python3)
-- if all goes well, you should have an additional file "raylib_s.h"
-- #include "raylib_s.h" (instead of "raylib.h", but keep it as it's not a replacement)
+* **git clone https://github.com/domhathair/raylib-converter-bash.git && cd raylib-converter-bash**
+* **chmod +x converter.sh**
+* **./converter.sh _<path_to_raylib_folder>_**
+* If all goes well, you should have an additional files _"raylib_s.h"_ and _"raymath_s.h"_;
+* **#include _"raylib_s.h"_** instead of _"raylib.h"_ but keep it as it's not a replacement.
