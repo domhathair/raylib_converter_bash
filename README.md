@@ -1,7 +1,5 @@
 ## snake_case converter for raylib.h / raymath.h
 
-[MIT license](https://github.com/domhathair/raylib-converter-bash/blob/master/LICENSE) - [@keyle](https://github.com/keyle/raylib-converter), [@domhathair](https://github.com/domhathair/raylib-converter-bash)
-
 This is a converter from raylib's traditional _PascalCase/camelCase_ to lowercase _snake_case_.
 
 **_NOTE_**: this converter is **NOT** part of the raylib library (https://www.raylib.com/) and is provided **"as-is"**.
